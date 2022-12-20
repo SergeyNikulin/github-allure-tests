@@ -16,7 +16,6 @@ public class SelenideTest {
     @Test
     public void searchIssueSelenideTest(){
         open("https://github.com/");
-        $(".header-search-input").click();
         $(".header-search-input").setValue(REPOSITORY).submit();
         $(linkText(REPOSITORY)).click();
         $("#issues-tab").click();

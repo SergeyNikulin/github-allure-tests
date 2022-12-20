@@ -18,10 +18,7 @@ public class LambdaStepTest {
     public void searchIssueLambdaStepTest() {
         step("Открываем главную страницу", () -> open("https://github.com/"));
 
-        step("Ищем репозиторий " + REPOSITORY, () -> {
-            $(".header-search-input").click();
-            $(".header-search-input").setValue(REPOSITORY).submit();
-        });
+        step("Ищем репозиторий " + REPOSITORY, () -> $(".header-search-input").setValue(REPOSITORY).submit());
 
         step("Переходим в репозиторий " + REPOSITORY, () -> $(linkText(REPOSITORY)).click());
 
