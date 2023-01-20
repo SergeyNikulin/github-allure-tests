@@ -19,18 +19,21 @@ repositories {
     mavenCentral()
 }
 
+def selenideVersion = "6.10.3",
+    junitVersion = "5.9.1"
+
 dependencies {
     // Selenide
-    testImplementation (
-            "com.codeborne:selenide:6.9.0",
+    testImplementation(
+            "com.codeborne:selenide:$selenideVersion",
             'io.qameta.allure:allure-selenide:2.15.0')
     testRuntimeOnly('org.slf4j:slf4j-simple:1.7.29')
 
     //JUnit 5
     testImplementation(
-            "org.junit.jupiter:junit-jupiter:5.9.1",
-            'org.junit.jupiter:junit-jupiter-params:5.9.1')
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.2")
+            "org.junit.jupiter:junit-jupiter:$junitVersion",
+            "org.junit.jupiter:junit-jupiter-params:$junitVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
 tasks.withType(JavaCompile) {
